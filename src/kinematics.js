@@ -42,6 +42,10 @@ function Kinematics() {
           left: '10px',
           padding: '10px 20px',
           fontSize: '16px',
+          backgroundColor: '#a68bad',
+          border: 'none',
+          borderRadius: '8px',
+          cursor: 'pointer'
         }}
         onClick={() => navigate('/topics')}
       >
@@ -50,7 +54,7 @@ function Kinematics() {
 
       {/* Intro Paragraph */}
       <p style={{ textAlign: 'center', fontSize: '40px', marginTop: '50px', marginLeft: '15%', marginRight: '15%', color: '#333' }}>
-        Kinematics
+        <b>Kinematics</b>
       </p>
       <p style={{ textAlign: 'center', fontSize: '25px', marginTop: '75px', marginLeft: '15%', marginRight: '15%', color: '#333' }}>
         Kinematics is the branch of physics that deals with how objects move without considering the mass of objects or the forces acting on them. This lesson focuses on introducing you to the basics of kinematics and getting you comfortable with terms which will both be built on in firther lessons. Below are the first set of terms.

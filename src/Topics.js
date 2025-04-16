@@ -1,44 +1,67 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 
 function Topics() {
   const navigate = useNavigate();
 
-  const containerStyle = {
+  const pageStyle = {
+    height: '100vh',
+    margin: 0,
+    backgroundColor: '#e3cfe8',
     display: 'flex',
-    flexDirection: 'column', // stack buttons vertically
-    alignItems: 'center',     // center horizontally
-    justifyContent: 'center', // center vertically
-    height: '100vh',          // full viewport height
-    gap: '20px',              // space between buttons
+    flexDirection: 'column',
+    alignItems: 'center',
   };
 
-  const buttonStyle = { //style for the buttons
+  const headerStyle = {
+    position: 'relative',
+    width: '100%',
+    textAlign: 'center',
+    padding: '20px 0',
+  };
+
+  const homeButtonStyle = {
+    position: 'absolute',
+    top: '10px',
+    left: '10px',
+    padding: '10px 20px',
+    fontSize: '16px',
+    backgroundColor: '#a68bad',
+    border: 'none',
+    borderRadius: '8px',
+    cursor: 'pointer',
+  };
+
+  const buttonContainerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '20px',
+    justifyContent: 'center',
+    flexGrow: 1,
+  };
+
+  const buttonStyle = {
     padding: '20px 40px',
     fontSize: '24px',
+    backgroundColor: '#a68bad',
+    color: 'black',
+    border: 'none',
+    borderRadius: '12px',
     cursor: 'pointer',
   };
 
   return (
-    <div style={{ backgroundColor: '#f0f0f0', height: '100vh' }}>
-      <div style={{ position: 'relative', textAlign: 'center' }}>
+    <div style={pageStyle}>
+      <div style={headerStyle}>
         <h1>Topics Page</h1>
-        <button
-          style={{
-            position: 'absolute',
-            top: '10px',
-            left: '10px',
-            padding: '10px 20px',
-            fontSize: '16px',
-          }}
-          onClick={() => window.location.href = '/'} //Home button 
-        >
+        <button style={homeButtonStyle} onClick={() => navigate('/')}>
           Home
         </button>
       </div>
-  
-      <div style={containerStyle}>
-        <button style={buttonStyle} onClick={() => navigate('/kinematics')}> 
+
+      <div style={buttonContainerStyle}>
+        <button style={buttonStyle} onClick={() => navigate('/kinematics')}>
           Kinematics
         </button>
         <button style={buttonStyle} onClick={() => navigate('/dynamics')}>
@@ -62,6 +85,6 @@ function Topics() {
       </div>
     </div>
   );
-} 
+}
 
 export default Topics;
