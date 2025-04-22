@@ -1,13 +1,42 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './home.css';
 
 function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="home-container">
-      {/* your JSX */}
+    <div style={{ textAlign: 'center', padding: '20px' }}>
+      <h1>Welcome to the Home Page</h1>
+      <button
+        style={{
+          margin: '9px',
+          padding: '10px 20px',
+          fontSize: '16px',
+        }}
+        onClick={() => navigate('/topics')}
+      >
+        Topics
+      </button>
+      <button
+        style={{
+          margin: '10px',
+          padding: '10px 20px',
+          fontSize: '16px',
+        }}
+        onClick={() => navigate('/settings')}
+      >
+        Settings
+      </button>
+      <button
+        style={{
+          margin: '10px',
+          padding: '10px 20px',
+          fontSize: '16px',
+        }}
+        onClick={() => navigate('/awards')}
+      >
+        Awards
+      </button>
     </div>
   );
 }
