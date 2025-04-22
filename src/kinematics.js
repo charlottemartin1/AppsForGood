@@ -137,7 +137,7 @@ function Kinematics() {
           </div>
         ))}
       </div>
-      {/*start of box bullshittery*/}
+      {/*start of box stuffery*/}
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: '20px', marginTop: '50px' }}>
         {/* Coordinate Plane */}
         <div
@@ -246,8 +246,8 @@ function Kinematics() {
           <p>{distance.toFixed(2)} px</p>
         </div>
       </div>
-      {/*end of bullshittery*/}
-      {/* Additional bullshittery */}
+      {/*end of stuffery*/}
+      {/* Additional stuff*/}
       {/* Second Simulation: Speed and Velocity */}
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'flex-start', gap: '20px', marginTop: '50px' }}>
         {/* Coordinate Plane */}
@@ -386,7 +386,7 @@ function Kinematics() {
           <p><strong>Distance:</strong> {speed.toFixed(2)} px</p>
         </div>
       </div>
-      {/* end of additional bullshittery */}
+      {/* end of additional stuff */}
       </div>
       {/* End of Second Simulation */}
       {/* Acceleration Info Section */}
@@ -430,7 +430,7 @@ Using the definition of velocity – change in displacement over change in time 
       >
         <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>Acceleration</h2>
         <p>
-        You may notice an issue with the previous example, when you go on a car ride you aren’t always going at 30mph, more often than not your velocity fluctuates during the car ride. This is where acceleration comes into play. Acceleration is the change in velocity. Acceleration is described as m/s^2 because it is the change in velocity (m/s) divided by time (s). 
+        You may notice an issue with the previous example, when you go on a car ride you aren’t always going at 30mph, more often than not your velocity fluctuates during the car ride. This is where acceleration comes into play. Acceleration is the change in velocity over the change in time. Acceleration is described as m/s^2 because it is the change in velocity (m/s) divided by time (s).<br></br><br></br> For example, say you're running and go from 1 m/s to 6m/s in 2 seconds, the acceleration would the change in velocity (5m/s) over the change in time (2 seconds) and thus be 5/2 or 2.5m/s^2. 
         </p>
       </div>
       {/* Equations Info Section */}
