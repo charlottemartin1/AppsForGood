@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './kinematics.css';
-import * as motion from "motion/react-client";
+import { motion } from "framer-motion";
+import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
-import { BlockMath, InlineMath } from 'react-katex';
+
 
 
 
@@ -429,14 +430,15 @@ function Kinematics() {
           marginRight: '10%',
         }}
       >
-        <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>V=X/T</h2>
+        <h2>Formulas</h2>
         <p>
         We can take the definition of velocity that was just given and use it to form an equation for velocity. <br></br><br></br>
 
 Using the definition of velocity – change in displacement over change in time –  the equation would be V = X/T. This is also shown in how we describe velocity in everyday life: miles per hour (mph), meters per second (m/s). If you traveled 5 miles in a 10 minute car ride, you would have the velocity being 0.5 miles per minute or 30 miles per hour.
 
         </p>
-        
+        <h2>Block Math</h2>
+        <BlockMath math="\int_0^\infty x^2 dx" />
       </div>
       {/* Velocity Info Section */}
       <div
@@ -457,8 +459,7 @@ Using the definition of velocity – change in displacement over change in time 
         <p>
         You may notice an issue with the previous example, when you go on a car ride you aren’t always going at 30mph, more often than not your velocity fluctuates during the car ride. This is where acceleration comes into play. Acceleration is the change in velocity over the change in time. Acceleration is described as m/s^2 because it is the change in velocity (m/s) divided by time (s).<br></br><br></br> For example, say you're running and go from 1 m/s to 6m/s in 2 seconds, the acceleration would the change in velocity (5m/s) over the change in time (2 seconds) and thus be (5m/s) / (2s) or 2.5m/s^2. 
         </p>
-        <BlockMath math="v = \frac{x}{t}" />
-
+        {/*add v=x/t here*/}
       </div>
       {/* Equations Info Section */}
       <div
