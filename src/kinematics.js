@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './kinematics.css';
+import * as motion from "motion/react-client";
+import 'katex/dist/katex.min.css';
+import { BlockMath, InlineMath } from 'react-katex';
+
 
 
 function Kinematics() {
@@ -12,7 +16,28 @@ function Kinematics() {
   const [velocityLastPosition, setVelocityLastPosition] = useState({ x: 0, y: 0 }); // Last position of the red box
   const [startTime, setStartTime] = useState(null); // Start time of the simulation
 
+  const box = {
+    width: "150px",
+    height: "150px",
+    backgroundColor: "#a68bad",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "8px",
+    cursor: "pointer",
+  };
 
+  function Gestures() {
+    return (
+      <motion.div
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.8 }}
+        style={box}
+      >
+        <strong>Interactive Box</strong>
+      </motion.div>
+    );
+  }
   const [boxTexts] = useState([
     { term: 'Vector', def: 'Has both magnitude and direction. For example “driving 30 mph north” would be a vector' },
     { term: 'Scalar', def: 'Has magnitude but no direction. For example “driving 30 mph” would be a scalar' },
@@ -33,7 +58,7 @@ function Kinematics() {
   };
 
   return (
-    <div style={{ position: 'relative', backgroundColor: '#fbedff', padding: '20px', overflow: 'auto' }}>
+    <div style={{ position: 'relative', backgroundColor: '#e3cfe8', padding: '20px', overflow: 'auto' }}>
       {/* Back Button */}
       <button
         style={{
@@ -118,7 +143,7 @@ function Kinematics() {
                   width: '100%',
                   height: '100%',
                   backfaceVisibility: 'hidden',
-                  backgroundColor: '#e3cfe8',
+                  backgroundColor: '#F4EAF7',
                   border: '1px solid #ccc',
                   borderRadius: '8px',
                   transform: 'rotateY(180deg)',
@@ -396,7 +421,7 @@ function Kinematics() {
           padding: '20px',
           border: '1px solid #ccc',
           borderRadius: '5px',
-          backgroundColor: '#e3cfe8',
+          backgroundColor: '#F4EAF7',
           fontSize: '16px',
           color: '#333',
           textAlign: 'center',
@@ -411,7 +436,7 @@ function Kinematics() {
 Using the definition of velocity – change in displacement over change in time –  the equation would be V = X/T. This is also shown in how we describe velocity in everyday life: miles per hour (mph), meters per second (m/s). If you traveled 5 miles in a 10 minute car ride, you would have the velocity being 0.5 miles per minute or 30 miles per hour.
 
         </p>
-
+        
       </div>
       {/* Velocity Info Section */}
       <div
@@ -420,7 +445,7 @@ Using the definition of velocity – change in displacement over change in time 
           padding: '20px',
           border: '1px solid #ccc',
           borderRadius: '5px',
-          backgroundColor: '#e3cfe8',
+          backgroundColor: '#F4EAF7',
           fontSize: '16px',
           color: '#333',
           textAlign: 'center',
@@ -430,8 +455,10 @@ Using the definition of velocity – change in displacement over change in time 
       >
         <h2 style={{ fontSize: '24px', marginBottom: '10px' }}>Acceleration</h2>
         <p>
-        You may notice an issue with the previous example, when you go on a car ride you aren’t always going at 30mph, more often than not your velocity fluctuates during the car ride. This is where acceleration comes into play. Acceleration is the change in velocity over the change in time. Acceleration is described as m/s^2 because it is the change in velocity (m/s) divided by time (s).<br></br><br></br> For example, say you're running and go from 1 m/s to 6m/s in 2 seconds, the acceleration would the change in velocity (5m/s) over the change in time (2 seconds) and thus be 5/2 or 2.5m/s^2. 
+        You may notice an issue with the previous example, when you go on a car ride you aren’t always going at 30mph, more often than not your velocity fluctuates during the car ride. This is where acceleration comes into play. Acceleration is the change in velocity over the change in time. Acceleration is described as m/s^2 because it is the change in velocity (m/s) divided by time (s).<br></br><br></br> For example, say you're running and go from 1 m/s to 6m/s in 2 seconds, the acceleration would the change in velocity (5m/s) over the change in time (2 seconds) and thus be (5m/s) / (2s) or 2.5m/s^2. 
         </p>
+        <BlockMath math="v = \frac{x}{t}" />
+
       </div>
       {/* Equations Info Section */}
       <div
@@ -440,7 +467,7 @@ Using the definition of velocity – change in displacement over change in time 
           padding: '20px',
           border: '1px solid #ccc',
           borderRadius: '5px',
-          backgroundColor: '#e3cfe8',
+          backgroundColor: '#F4EAF7',
           fontSize: '16px',
           color: '#333',
           textAlign: 'center',
@@ -460,6 +487,8 @@ Using the definition of velocity – change in displacement over change in time 
         <p>
           These equations assume constant acceleration and are fundamental in solving motion-related problems in physics.
         </p>
+
+         
       </div>
     </div>
     
