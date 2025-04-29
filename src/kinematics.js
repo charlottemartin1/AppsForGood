@@ -437,8 +437,7 @@ function Kinematics() {
 Using the definition of velocity – change in displacement over change in time –  the equation would be V = X/T. This is also shown in how we describe velocity in everyday life: miles per hour (mph), meters per second (m/s). If you traveled 5 miles in a 10 minute car ride, you would have the velocity being 0.5 miles per minute or 30 miles per hour.
 
         </p>
-        <h2>Block Math</h2>
-        <BlockMath math="\int_0^\infty x^2 dx" />
+        
       </div>
       {/* Velocity Info Section */}
       <div
